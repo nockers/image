@@ -1,6 +1,6 @@
 import { initializeApp, cert } from "firebase-admin/app"
 import { getStorage } from "firebase-admin/storage"
-import http from "http"
+import { Server } from "http"
 import { serve } from "micro"
 import { config } from "dotenv"
 import { tmpdir } from "os"
@@ -80,6 +80,6 @@ const handler = async (req, resp) => {
   return buffer
 }
 
-const server = new http.Server(serve(handler))
+const server = new Server(serve(handler))
 
 server.listen(3000)

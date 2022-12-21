@@ -1,6 +1,7 @@
 {
   "name": "image",
   "packageManager": "yarn@3.3.0",
+  "type": "module",
   "scripts": {
     "start": "node ."
   },
@@ -17,5 +18,4 @@
   "volta": {
     "node": "18.12.1"
   },
-  "type": "module"
 }
