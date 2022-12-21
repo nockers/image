@@ -2,8 +2,7 @@
   "name": "image",
   "packageManager": "yarn@3.3.0",
   "scripts": {
-    "start": "node dist",
-    "build": "tsc"
+    "start": "node src"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
@@ -12,8 +11,8 @@
     "sharp": "^0.31.2"
   },
   "devDependencies": {
-    "prettier": "^2.8.1",
-    "typescript": "^4.9.4"
+    "@types/sharp": "^0.31.0",
+    "prettier": "^2.8.1"
   },
   "volta": {
     "node": "18.12.1"
