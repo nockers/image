@@ -1,11 +1,10 @@
-import { initializeApp } from "firebase-admin/app"
-import { cert } from "firebase-admin/app"
+import { initializeApp, cert } from "firebase-admin/app"
+import { getStorage } from "firebase-admin/storage"
 import http from "http"
 import { serve } from "micro"
 import { config } from "dotenv"
 import { tmpdir } from "os"
 import sharp from "sharp"
-import { getStorage } from "firebase-admin/storage"
 
 config()
 
