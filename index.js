@@ -40,7 +40,7 @@ const handler = async (req, resp) => {
 
   const width = parseInt(search.get("w") || "512")
 
-  const height = parseInt(search.get("h") || "512")
+  const height = parseInt(search.get("h") || "0") || null
 
   const quality = parseInt(search.get("q") || "100")
 
@@ -67,15 +67,15 @@ const handler = async (req, resp) => {
 
   const resizedImage = sharp(file).resize({
     width: width,
-    height: height,
-    fit: sharp.fit.cover,
+    height: height ?? undefined,
+    fit: height !== null ? sharp.fit.cover : undefined,
   })
 
-  const shapeImage = resizedImage.png({ quality })
+  const sharpImage = resizedImage.png({ quality })
 
-  const buffer = shapeImage.toBuffer()
+  const buffer = sharpImage.toBuffer()
 
-  await shapeImage.toFile(tmpPath)
+  await sharpImage.toFile(tmpPath)
 
   return buffer
 }
