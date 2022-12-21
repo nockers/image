@@ -73,7 +73,7 @@ const handler = async (req, resp) => {
 
   const sharpImage = resizedImage.png({ quality })
 
-  const buffer = sharpImage.toBuffer()
+  const buffer = await sharpImage.toBuffer()
 
   await sharpImage.toFile(tmpPath)
 
